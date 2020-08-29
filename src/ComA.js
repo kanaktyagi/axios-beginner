@@ -1,10 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 function ComA() {
+     const [num, setNum] = useState()
     return (
         <div>
-            <h1> Pokemon</h1>
-            <select>
+            <h1> you choose {num} value</h1>
+            <select value={num} onChange={(event)=> {
+                setNum(event.target.value)
+            }}>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>

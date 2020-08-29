@@ -1,7 +1,15 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
+import axios from 'axios'
 
 function ComA() {
-     const [num, setNum] = useState()
+     const [num, setNum] = useState();
+     useEffect(() => {
+        async function getData() {
+            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
+            console.log("res", res)
+        }
+        getData() 
+     })
     return (
         <div>
             <h1> you choose {num} value</h1>
